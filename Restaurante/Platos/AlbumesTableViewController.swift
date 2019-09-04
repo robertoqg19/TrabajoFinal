@@ -11,7 +11,7 @@ import Firebase
 
 class AlbumesTableViewController: UITableViewController {
     
-    var albumes = [Album]()
+    var albumes = [Restaurante]()
     var ref : DatabaseReference!
 
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ class AlbumesTableViewController: UITableViewController {
         ref.child("albumes").observeSingleEvent(of: .value) { (snapshot) in
             self.albumes = []
             for child in snapshot.children.allObjects as! [DataSnapshot] {
-                let album = Album(snapshot: child)
+                let album = Restaurante(snapshot: child)
                 self.albumes.append(album)
             }
             self.tableView.reloadData()

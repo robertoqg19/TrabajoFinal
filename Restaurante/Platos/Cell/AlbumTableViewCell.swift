@@ -14,7 +14,7 @@ class AlbumTableViewCell: UITableViewCell {
     @IBOutlet weak var artistaLabel: UILabel!
     @IBOutlet weak var anioLabel: UILabel!
     
-    var album : Album? {
+    var album : Restaurante? {
         didSet {
             if let album = album {
                 tituloLabel.text = album.titulo
